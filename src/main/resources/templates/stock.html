@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+    <head>
+    </head>
+    <nav th:include="navigation :: navigation"></nav>
+    <body>
+        <section layout:fragment="content">
+            <table class="ui celled table">
+                <thead>
+                <tr>
+                    <th th:text="#{cart.itemTitle}">Titel</th>
+                    <th th:text="#{cart.count}">Anzahl</th>
+                </tr>
+                </thead>
+                <tbody th:remove="all-but-first">
+                <tr th:each=" item : ${stock}">
+                    <td th:text="${item.product.name}">brauner Tisch</td>
+                    <td th:text="${{item.quantity}}">10</td>
+                    <td>
+                    	<form class="ui form" th:method="post" th:action="@{/restock}">
+							<input type="hidden" name="itemid" th:value="${item.id}" />
+							<button type="button" th:type="submit">Restock</button>
+                    	</form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>brauner Tisch</td>
+                    <td>10</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+
+	<!--<script th:src="@{/webjars/jquery/jquery.min.js}" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script th:src="@{/webjars/Semantic-UI/semantic.min.js}"
+		src="http://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+	<link th:href="@{/webjars/Semantic-UI/semantic.min.css}" rel="stylesheet"
+		href="http://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css" type="text/css" />
+	<link th:href="@{/resources/css/style.css}" rel="stylesheet" href="../static/resources/css/style.css"
+		type="text/css" />-->
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<!-- Bootstrap CSS-->
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<img style="display: block; margin:auto"th:src="@{/resources/images/banner.png}" src="../static/resources/images/banner.png" alt="banner" />
+	<div class="ui container">
+		<header>
+			<!--h1 th:text="${#strings.isEmpty(title)} ? #{home.title} : ${title}">Moebelshop</h1-->
+
+		</header>
+		<div th:include="navigation :: navigation"></div>
+		<div class="border-top py-6 my-3" />
+		<section layout:fragment="content"></section>
+
+
+
+		<section layout:fragment="footer">
+			<div class="bottom">
+				<div class="container">
+					<footer class="py-5">
+						<div class="row">
+							<div class="col-6">
+								<form>
+									<h5>Kontaktieren Sie uns:</h5>
+									<h6>+496942069</h6>
+									<p>Öffnungszeiten:</p>
+									<p>Mo-Sa: 8-20 Uhr</p> 
+									<div class="d-flex w-100 gap-2">
+
+									</div>
+								</form>
+							</div>
+							<div class="col-3">
+								<h5>Unsere Bankverbindung:</h5>
+								<ul class="nav flex-column">
+									<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ostsächsische Sparkasse Dresden</a></li>
+									<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">DE 13 3769
+											6942 0420 6666</a></li>
+
+								</ul>
+							</div>
+							<div class="col-3">
+								<h5>Geschäftsführung & Anschrift:</h5>
+								<ul class="nav flex-column">
+									<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Mirko
+											Jantschke</a></li>
+									<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Gottstraße
+											10</a></li>
+									<li class="nav-item mb-2"><a href="#"
+											class="nav-link p-0 text-muted">Registergericht Dresden oder so</a></li>
+								</ul>
+							</div>
+
+
+
+
+						</div>
+
+						<div class="d-flex justify-content-between py-6 my-7 border-top">
+							<p>&copy; 2021 Möbel-hier, Inc. All rights reserved.</p>
+
+						</div>
+					</footer>
+				</div>
+			</div>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+				integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+				crossorigin="anonymous"></script> <!-- Bootstrap script-->
+</body>
+
+
+</html>
